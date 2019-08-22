@@ -1,0 +1,38 @@
+<div id="app">
+  <div class="container">
+    <h1>Bet Verification <a @click="changeGame('dice')" :class="{active: game==='dice'}">DICE</a><a @click="changeGame('crash')" :class="{active: game==='crash'}">CRASH</a></h1>
+    <div class="field">
+      <label class="label">Server seed</label>
+      <div class="control">
+        <input class="input is-small" v-model.trim="verifyServer" type="text">
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Server seed hash</label>
+      <div class="control">
+        <input class="input is-small" v-model="verifyHash" type="text" :disabled="true">
+      </div>
+    </div>
+    <div class="columns ">
+      <div class="column is-6">
+        <div class="field">
+          <label class="label">Client seed</label>
+          <div class="control">
+            <input class="input is-small" v-model.trim="verifyClient" type="text">
+          </div>
+        </div>
+      </div>
+      <div class="column is-2">
+        <div class="field">
+          <label class="label">Nonce</label>
+          <div class="control">
+            <input class="input is-small" v-model.number="verifyNonce" type="text">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="result-data">
+      Result: {{result}}
+    </div>
+  </div>
+</div>
